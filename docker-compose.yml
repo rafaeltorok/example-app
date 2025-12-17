@@ -3,6 +3,8 @@ services:
     image: rafaeltorok/example-app:latest
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - "8080:8080"
 
   watchtower:
     image: containrrr/watchtower:1.7.1
