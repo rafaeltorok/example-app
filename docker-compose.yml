@@ -7,7 +7,7 @@ services:
       - "8080:8080"
 
   watchtower:
-    image: containrrr/watchtower:1.7.1
+    image: containrrr/watchtower:latest
     command: --label-enable
     environment:
       - WATCHTOWER_POLL_INTERVAL=60
