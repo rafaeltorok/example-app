@@ -1,0 +1,15 @@
+services:
+  app:
+    image: rafaeltorok/example-app:latest
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  watchtower:
+    image: containrrr/watchtower:1.7.1
+    command: --label-enable
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    container_name: watchtower
